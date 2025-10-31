@@ -17,24 +17,6 @@ The **Smart Financial Portfolio Assistant** is an AI-powered application develop
 - **APIs:** Financial market data APIs (custom integrations)  
 - **Tools:** Git, Jupyter Notebook  
 
-## Installation
-```bash
-git clone https://github.com/RamiBenAmor/Smart-Financial-Portfolio-Assistant.git
-cd Smart-Financial-Portfolio-Assistant
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-## Usage
-```bash
-python market_validation_system/preprocessing.py
-python market_validation_system/RandomForestprediction.py
-streamlit run app.py
-```
-
-Once the dashboard is launched, users can visualize portfolio performance and explore AI-based strategy recommendations.
-
 ## Results
 - Portfolio performance improved by **20%** through AI recommendations  
 - Potential loss exposure reduced by **25%** with real-time monitoring  
