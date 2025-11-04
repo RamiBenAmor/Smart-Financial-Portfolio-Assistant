@@ -145,7 +145,7 @@ def ask_gemini_to_explain(
             r1_effective = r1_raw * r2_bin
 
             combined_risk[asset] = r1_effective
-
+    
     payload = {
         "user_profile": user_profile,
         "holdings": user_holdings,

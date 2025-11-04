@@ -13,9 +13,9 @@ import sys
 from alerte import alerte
 holdings = {"AAPL": 1, "BTC_USD": 0.1, "TSLA": 0.5}
 import joblib
-model = joblib.load('C:\\Users\\ramib\\OneDrive\\Bureau\\assistant de gestion de patrimoine\\RandomForest_Risk_J+1_20251019_0536.joblib')
-scaler = joblib.load('C:\\Users\\ramib\\OneDrive\\Bureau\\assistant de gestion de patrimoine\\scaler_20251019_0537.joblib')
-le = joblib.load('C:\\Users\\ramib\\OneDrive\\Bureau\\assistant de gestion de patrimoine\\label_encoder_20251019_0537.joblib')
+model = joblib.load('model\RandomForest_Risk_J+1_20251019_0536.joblib')
+scaler = joblib.load('model\scaler_20251019_0537.joblib')
+le = joblib.load('model\label_encoder_20251019_0537.joblib')
 # Full path to your module
 profile = st.session_state.get("profile")
 import os
@@ -166,7 +166,7 @@ class ValidationEngine:
         scores.append(network_health); weights.append(0.3)
         total_score = sum(s*w for s,w in zip(scores,weights))/sum(weights)
         return int(total_score)
-
+    #security score
     def validate_all(self):
         for symbol in self.market_data.keys():
             vol_ratio,leg_status = self.calculate_volume_ratio(symbol)
@@ -256,7 +256,6 @@ def get_selected_score_and_decision(selected_symbol, validation_results):
 
 # ---------------------- MODULARIZED BUY INTERACTION ---------------
 def get_buy_decision_interaction(asset_table, market_data, validation_results):
-    # 1. Génération de asset_map (à chaque lancement, une fois pour tous les fichiers)
     asset_map = {}
     for filename in os.listdir(DATA_DIR):
         if not filename.endswith(".csv"):
@@ -267,15 +266,14 @@ def get_buy_decision_interaction(asset_table, market_data, validation_results):
         csv_path = os.path.join(DATA_DIR, filename)
         
         # Récupérer le risque prédit (index 1 = score entre 0 et 1)
-        risk_result = predict_asset_risk(csv_path, model, scaler, le)
-        predicted_risk = risk_result[0]  # score entre 0 et 1
-        
+        predicted_risk = predict_asset_risk(csv_path, model, scaler, le) 
+        print("risk fiancier",predicted_risk)        
         # Récupérer le score de légitimité si disponible
-        score = None
+        score_securite = None
         if validation_results and symbol in validation_results:
-            score, _ = get_selected_score_and_decision(symbol, validation_results)
+            score_securite, _ = get_selected_score_and_decision(symbol, validation_results)
         
-        asset_map[symbol] = [predicted_risk, score]
+        asset_map[symbol] = [predicted_risk, score_securite]
     
     st.session_state['purshase'] = asset_map
 
