@@ -7,7 +7,8 @@ The **Smart Financial Portfolio Assistant** is an AI-powered application develop
 - Manage and optimize multi-asset investment portfolios  
 - Generate AI-driven personalized investment strategies  
 - Detect and alert risky market behaviors in real time  
-- Provide visual analytics through a Streamlit dashboard  
+- Provide visual analytics through a Streamlit dashboard
+- Robust adversarial defense against ML model exploitation 
 - Deliver automated insights to support smarter financial decisions  
 
 ## Technologies
@@ -16,10 +17,12 @@ The **Smart Financial Portfolio Assistant** is an AI-powered application develop
 - **Frameworks:** Streamlit, FastAPI  
 - **APIs:** Financial market data APIs (custom integrations)  
 - **Tools:** Git, Jupyter Notebook  
-
+## Technical Highlights
+-Random Forest ML for multi-factor financial risk assessment
+-Adversarial defense (feature squeezing) to enhance model robustness in cyberthreat environments
+-Blockchain-integrated legitimacy scoring for data and transaction trust
+-LLM-powered recommendations for explainable financial decisions and adaptive communication
 ## Results
-- Portfolio performance improved by **20%** through AI recommendations  
-- Potential loss exposure reduced by **25%** with real-time monitoring  
 - Enhanced accuracy in risk detection and investment optimization  
 
  
