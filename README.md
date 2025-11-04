@@ -18,10 +18,10 @@ The **Smart Financial Portfolio Assistant** is an AI-powered application develop
 - **APIs:** Financial market data APIs (custom integrations)  
 - **Tools:** Git, Jupyter Notebook  
 ## Technical Highlights
--Random Forest ML for multi-factor financial risk assessment
--Adversarial defense (feature squeezing) to enhance model robustness in cyberthreat environments
--Blockchain-integrated legitimacy scoring for data and transaction trust
--LLM-powered recommendations for explainable financial decisions and adaptive communication
+- Random Forest ML for multi-factor financial risk assessment
+- Adversarial defense (feature squeezing) to enhance model robustness in cyberthreat environments
+- Blockchain-integrated legitimacy scoring for data and transaction trust
+- LLM-powered recommendations for explainable financial decisions and adaptive communication
 ## Results
 - Enhanced accuracy in risk detection and investment optimization  
 
